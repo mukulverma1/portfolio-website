@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <style>
         /* CSS styles */
         :root {
@@ -118,6 +119,7 @@
             height: 320px;
             width: 320px;
             border-radius: 50%;
+            object-fit: cover;
         }
 
         .stats {
@@ -159,34 +161,219 @@
             border-radius: 5px;
         }
 
-        .service-item h3 {
-            margin-bottom: 10px;
-        }
-
         .skills {
+        margin-top: 50px;
+    }
+
+    .skills h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .skill-item {
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .skill-icon {
+        /* mix-blend-mode: multiply; */
+        background-color: var(--bg-color);
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .skill-name {
+        font-size: 18px;
+    }
+
+    <style>
+    .projects {
+        margin-top: 50px;
+    }
+
+    .projects h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .project-item {
+        background-color: var(--secondary-bg);
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .project-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .project-item h3 {
+        font-size: 1.2rem;
+        margin: 10px 15px;
+    }
+
+    .project-item p {
+        font-size: 0.9rem;
+        margin: 0 15px 15px;
+        color: #ccc;
+    }
+
+    .project-link {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        padding: 5px 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 3px;
+        margin: 0 15px 15px;
+    }
+
+/* Contact Section */
+.contact {
+    padding: 50px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e6c200;
+}
+
+/* Map Container Styles */
+.map-container {
+    margin-top: 30px;
+}
+
+footer {
+            background-color: var(--secondary-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px 0;
             margin-top: 50px;
         }
 
-        .skill-item {
-            margin-bottom: 20px;
+        .social-links {
+            margin-top: 15px;
         }
 
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+        .social-links a {
+            color: var(--text-color);
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
         }
 
-        .skill-bar {
-            height: 10px;
-            background-color: var(--secondary-bg);
-            border-radius: 5px;
-            overflow: hidden;
+        .social-links a:hover {
+            color: var(--accent-color);
         }
 
-        .skill-progress {
-            height: 100%;
-            background-color: var(--accent-color);
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center; /* Centered layout on smaller screens */
+    }
+
+    .contact-info, .contact-form {
+        text-align: center;
+    }
+
+    .map-container {
+        width: 100%;
+    }
+}
+
+    @media (max-width: 768px) {
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skill-grid {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         }
 
         /* Responsive Styles */
@@ -234,13 +421,15 @@
                 font-size: 1.5rem;
             }
         }
+    }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="profile">
-                <img src="https://via.placeholder.com/60" alt="MUKUL VERMA">
+                <img src="profileImg.jpeg" alt="MUKUL VERMA">
+                
                 <div class="profile-info">
                     <h1>MUKUL VERMA</h1>
                     <p>Web Developer & Designer</p>
@@ -261,30 +450,30 @@
                 <div class="hero-content">
                     <h2>Discover my Amazing Art Space!</h2>
                     <p>&lt;code&gt; I build &lt;/code&gt;</p>
-                    <a href="#" class="cta-button">EXPLORE NOW</a>
+                    <a href="#" class="cta-button">HIRE ME</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://via.placeholder.com/400x300" alt="Hero Image">
+                    <img src="profileImg.jpeg" alt="MUKUL VERMA">
                 </div>
             </section>
 
             <div class="stats">
                 <div class="stat-item">
-                    <h3>10+</h3>
+                    <h3>2+</h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
-                    <h3>143</h3>
+                    <h3>5</h3>
                     <p>Completed Projects</p>
                 </div>
                 <div class="stat-item">
-                    <h3>114</h3>
+                    <h3>12+</h3>
                     <p>Happy Customers</p>
                 </div>
-                <div class="stat-item">
+                <!-- <div class="stat-item">
                     <h3>20+</h3>
                     <p>Honors and Awards</p>
-                </div>
+                </div> -->
             </div>
 
             <section id="services" class="services">
@@ -292,58 +481,144 @@
                 <div class="service-grid">
                     <div class="service-item">
                         <h3>Web Development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.</p>
+                        <p>I am a MERN stack developer with expertise in MongoDB, Express.js, React, and Node.js. I build dynamic, scalable web applications,
+                             focusing on performance, responsiveness, and seamless user experiences.
+                             My approach ensures high-quality solutions tailored to client needs.</p>
                     </div>
                     <div class="service-item">
                         <h3>UI/UX Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.</p>
+                        <p>
+                            I am a UI/UX designer focused on creating intuitive, visually appealing interfaces. Skilled in wireframing, prototyping, and usability testing,
+                             I use tools like Figma and Adobe XD to design user-centered experiences that enhance satisfaction and align with brand identity.</p>
                     </div>
                     <div class="service-item">
-                        <h3>Sound Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.</p>
+                        <h3> App Development</h3>
+                        <p>I specialize in app development, creating intuitive, feature-rich mobile applications for both Android and iOS. 
+                            With expertise in Kotlin, Java, and cross-platform frameworks,
+                             I focus on building responsive, user-friendly apps that deliver seamless experiences and meet client needs.</p>
                     </div>
                 </div>
             </section>
 
             <section id="skills" class="skills">
                 <h2>My Skills</h2>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>HTML</span>
-                        <span>95%</span>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.IaZaZY1pkQ6JCdkQSV9pYQHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="HTML" class="skill-icon">
+                        <span class="skill-name">HTML</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%;"></div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.GoE4o5aeeohkC8SvwhbMoAHaHa?rs=1&pid=ImgDetMain" alt="CSS" class="skill-icon">
+                        <span class="skill-name">CSS</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.td23DH_yJ8mggdkkeJmqvgHaHQ?w=216&h=212&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="React" class="skill-icon">
+                        <span class="skill-name">React</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.g8rP3clSTXzLZ2Piq0h2ZwHaHa?w=166&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Node.js" class="skill-icon">
+                        <span class="skill-name">Node.js</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.tN1MXhizwKDDUBjzfCsvlAHaHa?w=212&h=212&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="C" class="skill-icon">
+                        <span class="skill-name">C</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.jBhO-U9FbAoSGKgycWRl8gHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="C++" class="skill-icon">
+                        <span class="skill-name">C++</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.5SWe47uPmqZTi4XDnchpSwHaHa?w=199&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Java" class="skill-icon">
+                        <span class="skill-name">Java (with DSA)</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="https://th.bing.com/th/id/OIP.YmPfYoQK3WvGEjFXusKV9QHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Rust" class="skill-icon">
+                        <span class="skill-name">Rust</span>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>CSS</span>
-                        <span>85%</span>
+            </section> 
+
+
+            <section id="projects" class="projects">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1</p>
+                        <a href="#" class="project-link">View Project</a>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>PHP</span>
-                        <span>65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%;"></div>
+                    <div class="project-item">
+                        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2</p>
+                        <a href="#" class="project-link">View Project</a>
                     </div>
                 </div>
             </section>
+
+
+            
+            <section class="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa fa-phone"></i>
+                            <span>9005421652</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-envelope"></i>
+                            <span>mukulverma12344@.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa fa-map-marker"></i>
+                            <span>Maharana Ptratap Nagar Jhansi , India</span>
+                        </div>
+                    </div>
+            
+                    <div class="contact-form">
+                        <h3>Get in Touch</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <!-- Google Map or Custom Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </section>
+
+
+            <footer>
+                <div class="container">
+                    <p>Thank you for visiting my portfolio. I look forward to the opportunity of working with you!</p>
+                    <!-- <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div> -->
+                </div>
+            </footer
+
+
+        
+
         </main>
     </div>
 
@@ -357,6 +632,41 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would typically send the form data to a server
+        // For this example, we'll just simulate a successful submission
+        
+        // Disable the submit button and show loading state
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        
+        // Simulate server request
+        setTimeout(() => {
+            // Re-enable the submit button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset the form
+            this.reset();
+        }, 2000);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.createElement('p');
+            copyrightElement.textContent = `© ${currentYear} MUKUL VERMA. All rights reserved.`;
+            document.querySelector('footer .container').appendChild(copyrightElement);
         });
 
         // You can add more JavaScript functionality here as needed
