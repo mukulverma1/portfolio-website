@@ -123,16 +123,21 @@
         }
 
         .stats {
-            display: flex;
+            /* display: flex;
             justify-content: space-around;
             margin-top: 50px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; */
+
+            display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+
         }
 
         .stat-item {
             text-align: center;
             flex: 1 1 200px; 
-            margin: 20px; /* Added for spacing */
+            margin: 10px; /* Added for spacing */
         }
 
         .stat-item h3 {
@@ -159,6 +164,7 @@
             background-color: var(--secondary-bg);
             padding: 20px;
             border-radius: 5px;
+            border-radius: 15px;
         }
 
         .skills {
@@ -197,7 +203,7 @@
         font-size: 18px;
     }
 
-    <style>
+    /* <style> */
     .projects {
         margin-top: 50px;
     }
@@ -215,9 +221,10 @@
 
     .project-item {
         background-color: var(--secondary-bg);
-        border-radius: 5px;
+        /* border-radius: 5px; */
         overflow: hidden;
         transition: transform 0.3s ease;
+        border-radius: 15px;
     }
 
     .project-item:hover {
@@ -278,6 +285,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    
+}
+
+.contact-link{
+    text-decoration: none;
+    color: white;
 }
 
 .contact-item i {
@@ -302,23 +315,81 @@
     border: 1px solid var(--accent-color);
     background-color: var(--bg-color);
     color: var(--text-color);
+    border-radius: 15px;
 }
 
 .form-group textarea {
     height: 150px;
 }
 
-button[type="submit"] {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.button-unique {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  border-radius: 36px;
+  font-weight: 700;
+  height: 54px;
+  font-size: 16px;
+  padding-inline: 20px;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: center;
+  transition: all .25s ease-in-out;
+  z-index: 1;
+  border: none;
 }
 
-button[type="submit"]:hover {
-    background-color: #e6c200;
+.button-unique:is(:hover, :focus)::before {
+  transform: translateX(0%);
+}
+
+.text-unique {
+  white-space: nowrap;
+  line-height: 1.2;
+  padding-inline-end: 44px;
+  z-index: 2;
+}
+
+/* change the width and height to 100% when you use it in your layout */
+.button-unique::after {
+  content: '';
+  position: absolute;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  border: 1px solid #FFB400;
+  border-radius: 36px;
+  z-index: 2;
+}
+
+.button-unique::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #FFB400;
+  z-index: 1;
+  left: -2px;
+  transform: translateX(90%);
+  transition: all .3s ease-out;
+}
+
+.icon-unique {
+  display: inherit;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 54px;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #FFB400;
+  z-index: 2;
 }
 
 /* Map Container Styles */
@@ -331,33 +402,21 @@ footer {
             color: var(--text-color);
             text-align: center;
             padding: 20px 0;
-            margin-top: 50px;
+            /* margin-top: 10px; */
+            border-radius: 15px;
         }
 
-        .social-links {
-            margin-top: 15px;
-        }
-
-        .social-links a {
-            color: var(--text-color);
-            font-size: 24px;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
+        
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
-        align-items: center; /* Centered layout on smaller screens */
+         /* align-items: center;  */
     }
 
     .contact-info, .contact-form {
-        text-align: center;
+        /* text-align: center; */
     }
 
     .map-container {
@@ -400,7 +459,18 @@ footer {
 
             .stats {
                 /* flex-direction: column; */
+                margin-top: 20px;
                 align-items: center;
+            }
+
+            .cta-button {
+                /* padding: 8px 16px; */
+                position: absolute;
+                margin-top: 230px;
+                /* left: 50%; */
+                right: 38%;
+
+            
             }
         }
 
@@ -415,6 +485,7 @@ footer {
 
             .cta-button {
                 padding: 8px 16px;
+            
             }
 
             .stat-item h3 {
@@ -448,8 +519,8 @@ footer {
         <main>
             <section id="home" class="hero">
                 <div class="hero-content">
-                    <h2>Discover my Amazing Art Space!</h2>
-                    <p>&lt;code&gt; I build &lt;/code&gt;</p>
+                    <h2>Step into My World of Development, Innovation, and Creative Solutions!</h2>
+                    <p>&lt;code&gt; I create | I innovate | I solve &lt;/code&gt;</p>
                     <a href="#" class="cta-button">HIRE ME</a>
                 </div>
                 <div class="hero-image">
@@ -470,10 +541,10 @@ footer {
                     <h3>12+</h3>
                     <p>Happy Customers</p>
                 </div>
-                <!-- <div class="stat-item">
+                <div class="stat-item">
                     <h3>20+</h3>
                     <p>Honors and Awards</p>
-                </div> -->
+                </div>
             </div>
 
             <section id="services" class="services">
@@ -569,7 +640,16 @@ footer {
                         </div>
                         <div class="contact-item">
                             <i class="fa fa-envelope"></i>
-                            <span>mukulverma12344@.com</span>
+                            <span>mukulverma12344@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a class="contact-link" href="www.linkedin.com/in/mukul-verma-b4aab7248"><span>mukul
+                                    Verma</span></a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-discord"></i>
+                            <a class="contact-link" href="https://discord.gg/KQnKkzre"><span>Mafiya_coder</span></a>
                         </div>
                         <div class="contact-item">
                             <i class="fa fa-map-marker"></i>
@@ -579,7 +659,8 @@ footer {
             
                     <div class="contact-form">
                         <h3>Get in Touch</h3>
-                        <form action="#" method="POST">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="9eda6daa-9395-4942-8a52-5cbaeb4deb02">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -592,14 +673,20 @@ footer {
                                 <label for="message">Your Message</label>
                                 <textarea id="message" name="message" required></textarea>
                             </div>
-                            <button type="submit">Send Message</button>
+                            <!-- <button type="submit">Send Message</button> -->
+                            <button class="button-unique">
+                                <span class="text-unique">Send Message</span>
+                                <span class="icon-unique">
+                                  <i class="fas fa-paper-plane"></i>
+                                </span>
+                              </button>
                         </form>
                     </div>
                 </div>
             
                 <!-- Google Map or Custom Map -->
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.3263260015115!2d78.60402697548588!3d25.460776777542222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397777179b9b1623%3A0xec05316195decd1f!2sMahalakshmi%20Hardware%20%26%20Paint%20House!5e0!3m2!1sen!2sin!4v1731758557113!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </section>
 
@@ -607,13 +694,7 @@ footer {
             <footer>
                 <div class="container">
                     <p>Thank you for visiting my portfolio. I look forward to the opportunity of working with you!</p>
-                    <!-- <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div> -->
-                </div>
+                 
             </footer
 
 
