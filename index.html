@@ -5,495 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <style>
-        /* CSS styles */
-        :root {
-            --bg-color: #1e1e2e;
-            --text-color: #ffffff;
-            --accent-color: #ffd700;
-            --secondary-bg: #2a2a3a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-wrap: wrap; /* Added for responsiveness */
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-
-        .profile img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-
-        .profile-info h1 {
-            font-size: 1.5rem;
-        }
-
-        .profile-info p {
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            flex-wrap: wrap; /* Added for responsiveness */
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px 0;
-            flex-wrap: wrap; /* Added for responsiveness */
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: right;
-        }
-
-        .hero-image img {
-            height: 320px;
-            width: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .stats {
-            /* display: flex;
-            justify-content: space-around;
-            margin-top: 50px;
-            flex-wrap: wrap; */
-
-            display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-
-        }
-
-        .stat-item {
-            text-align: center;
-            flex: 1 1 200px; 
-            margin: 10px; /* Added for spacing */
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            color: var(--accent-color);
-        }
-
-        .services {
-            margin-top: 50px;
-        }
-
-        .services h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .service-item {
-            background-color: var(--secondary-bg);
-            padding: 20px;
-            border-radius: 5px;
-            border-radius: 15px;
-        }
-
-        .skills {
-        margin-top: 50px;
-    }
-
-    .skills h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .skill-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 20px;
-        justify-items: center;
-    }
-
-    .skill-item {
-       
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .skill-icon {
-        /* mix-blend-mode: multiply; */
-        background-color: var(--bg-color);
-        width: 70px;
-        height: 70px;
-        margin-bottom: 10px;
-    }
-
-    .skill-name {
-        font-size: 18px;
-    }
-
-    /* <style> */
-    .projects {
-        margin-top: 50px;
-    }
-
-    .projects h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-
-    .project-item {
-        background-color: var(--secondary-bg);
-        /* border-radius: 5px; */
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        border-radius: 15px;
-    }
-
-    .project-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .project-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .project-item h3 {
-        font-size: 1.2rem;
-        margin: 10px 15px;
-    }
-
-    .project-item p {
-        font-size: 0.9rem;
-        margin: 0 15px 15px;
-        color: #ccc;
-    }
-
-    .project-link {
-        display: inline-block;
-        background-color: var(--accent-color);
-        color: var(--bg-color);
-        padding: 5px 10px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 3px;
-        margin: 0 15px 15px;
-    }
-
-/* Contact Section */
-.contact {
-    padding: 50px 0;
-}
-
-.contact h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.contact-info, .contact-form {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 30px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
     
-}
-
-.contact-link{
-    text-decoration: none;
-    color: white;
-}
-
-.contact-item i {
-    margin-right: 10px;
-    color: var(--accent-color);
-}
-
-/* Form Styles */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--accent-color);
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border-radius: 15px;
-}
-
-.form-group textarea {
-    height: 150px;
-}
-
-.button-unique {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  border-radius: 36px;
-  font-weight: 700;
-  height: 54px;
-  font-size: 16px;
-  padding-inline: 20px;
-  background-color: transparent;
-  color: #fff;
-  text-transform: uppercase;
-  overflow: hidden;
-  text-align: center;
-  transition: all .25s ease-in-out;
-  z-index: 1;
-  border: none;
-}
-
-.button-unique:is(:hover, :focus)::before {
-  transform: translateX(0%);
-}
-
-.text-unique {
-  white-space: nowrap;
-  line-height: 1.2;
-  padding-inline-end: 44px;
-  z-index: 2;
-}
-
-/* change the width and height to 100% when you use it in your layout */
-.button-unique::after {
-  content: '';
-  position: absolute;
-  height: calc(100% - 2px);
-  width: calc(100% - 2px);
-  border: 1px solid #FFB400;
-  border-radius: 36px;
-  z-index: 2;
-}
-
-.button-unique::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #FFB400;
-  z-index: 1;
-  left: -2px;
-  transform: translateX(90%);
-  transition: all .3s ease-out;
-}
-
-.icon-unique {
-  display: inherit;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  width: 54px;
-  height: 54px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  background-color: #FFB400;
-  z-index: 2;
-}
-
-/* Map Container Styles */
-.map-container {
-    margin-top: 30px;
-}
-
-footer {
-            background-color: var(--secondary-bg);
-            color: var(--text-color);
-            text-align: center;
-            padding: 20px 0;
-            /* margin-top: 10px; */
-            border-radius: 15px;
-        }
-
-        
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-         /* align-items: center;  */
-    }
-
-    .contact-info, .contact-form {
-        /* text-align: center; */
-    }
-
-    .map-container {
-        width: 100%;
-    }
-}
-
-    @media (max-width: 768px) {
-        .project-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .skill-grid {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-image img {
-                height: 200px;
-                width: 200px;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul {
-                justify-content: center;
-                margin-top: 10px;
-            }
-
-            .stats {
-                /* flex-direction: column; */
-                margin-top: 20px;
-                align-items: center;
-            }
-
-            .cta-button {
-                /* padding: 8px 16px; */
-                position: absolute;
-                margin-top: 230px;
-                /* left: 50%; */
-                right: 38%;
-
-            
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 8px 16px;
-            
-            }
-
-            .stat-item h3 {
-                font-size: 1.5rem;
-            }
-        }
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -511,7 +24,7 @@ footer {
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Hire Me</a></li>
                 </ul>
             </nav>
         </header>
@@ -521,7 +34,9 @@ footer {
                 <div class="hero-content">
                     <h2>Step into My World of Development, Innovation, and Creative Solutions!</h2>
                     <p>&lt;code&gt; I create | I innovate | I solve &lt;/code&gt;</p>
-                    <a href="#" class="cta-button">HIRE ME</a>
+                    <a href="#contact" class="cta-button">HIRE ME</a>
+
+                    <a href="Mukul Verma Resume.pdf " download class="cta-button">Download Resume</a>
                 </div>
                 <div class="hero-image">
                     <img src="profileImg.jpeg" alt="MUKUL VERMA">
@@ -538,12 +53,12 @@ footer {
                     <p>Completed Projects</p>
                 </div>
                 <div class="stat-item">
-                    <h3>12+</h3>
-                    <p>Happy Customers</p>
+                    <h3>10+</h3>
+                    <p>Programming Languages</p>
                 </div>
                 <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Honors and Awards</p>
+                    <h3>150+</h3>
+                    <p>Coding Problem Solved</p>
                 </div>
             </div>
 
@@ -614,15 +129,17 @@ footer {
                 <h2>My Projects</h2>
                 <div class="project-grid">
                     <div class="project-item">
-                        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                        <img src="https://th.bing.com/th/id/OIP.5mWUWkUHCFdFtCBXYExMlAHaHa?w=850&h=850&rs=1&pid=ImgDetMain" alt="Project 1">
                         <h3>Project 1</h3>
-                        <p>Description of Project 1</p>
+                        <p>An innovative web development portfolio highlighting my skills and projects in HTML, CSS, and JavaScript. Features responsive design, interactive elements,
+                             and dynamic components for an engaging user experience across devices</p>
                         <a href="#" class="project-link">View Project</a>
                     </div>
                     <div class="project-item">
                         <img src="https://via.placeholder.com/300x200" alt="Project 2">
                         <h3>Project 2</h3>
-                        <p>Description of Project 2</p>
+                        <p>Introducing a dynamic coaching platform where teachers can register and showcase their expertise, while students can effortlessly find and connect with them. <span>Currently under process</span> , our project aims to streamline the discovery of qualified teachers and enhance the learning experience through an easy-to-navigate,
+                             user-friendly interface.</p>
                         <a href="#" class="project-link">View Project</a>
                     </div>
                 </div>
@@ -630,8 +147,8 @@ footer {
 
 
             
-            <section class="contact">
-                <h2>Contact Me</h2>
+            <section id="contact" class="contact">
+                <h2>Hire Me</h2>
                 <div class="contact-container">
                     <div class="contact-info">
                         <div class="contact-item">
@@ -644,7 +161,7 @@ footer {
                         </div>
                         <div class="contact-item">
                             <i class="fa-brands fa-linkedin"></i>
-                            <a class="contact-link" href="www.linkedin.com/in/mukul-verma-b4aab7248"><span>mukul
+                            <a class="contact-link" href="www.linkedin.com/in/mukul-verma-b4aab7248"><span>Mukul
                                     Verma</span></a>
                         </div>
                         <div class="contact-item">
@@ -655,27 +172,55 @@ footer {
                             <i class="fa fa-map-marker"></i>
                             <span>Maharana Ptratap Nagar Jhansi , India</span>
                         </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.
+                            3263260015115!2d78.60402697548588!3d25.460776777542222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                            1!3m3!1m2!1s0x397777179b9b1623%3A0xec05316195decd1f!2sMahalakshmi%20Hardware%20%26%20Paint%20House!
+                            5e0!3m2!1sen!2sin!4v1731758557113!5m2!1sen!2sin" border-radius="80%" width="90%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
             
                     <div class="contact-form">
-                        <h3>Get in Touch</h3>
+                        <!-- <h3>Get in Touch</h3> -->
                         <form action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="9eda6daa-9395-4942-8a52-5cbaeb4deb02">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required>
+                                <input placeholder="Enter Your Full Name...." type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required>
+                                <input placeholder="Your Email Address...." type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" required></textarea>
+                                <label for="project-type">Project Type</label>
+                                <select id="project-type" name="project-type" required>
+                                    <option value="" disabled selected>Select your project type</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="ui-ux-design">UI/UX Design</option>
+                                    <option value="app-development">App Development</option>
+                                    <option value="consultant">consultant</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
+                            <div class="form-group">
+                                <label for="Budget">Budget</label>
+                                <select id="project-type" name="project-type" required>
+                                    <option value="" disabled selected>Select your Budget</option>
+                                    <option value="Below 10k">Below  &#8377;10k</option>
+                                    <option value="10k - 20k ">&#8377;10k - &#8377;20k</option>
+                                    <option value="20k - 30k">&#8377;20k - &#8377;30k</option>
+                                    <option value="Above 30k">Above &#8377;30k</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Project</label>
+                                <textarea placeholder="Describe your project here..." id="message" name="message" required></textarea>
+                            </div>
+
                             <!-- <button type="submit">Send Message</button> -->
                             <button class="button-unique">
-                                <span class="text-unique">Send Message</span>
+                                <span class="text-unique">Let's Work Together</span>
                                 <span class="icon-unique">
                                   <i class="fas fa-paper-plane"></i>
                                 </span>
@@ -685,9 +230,7 @@ footer {
                 </div>
             
                 <!-- Google Map or Custom Map -->
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.3263260015115!2d78.60402697548588!3d25.460776777542222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397777179b9b1623%3A0xec05316195decd1f!2sMahalakshmi%20Hardware%20%26%20Paint%20House!5e0!3m2!1sen!2sin!4v1731758557113!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+               
             </section>
 
 
