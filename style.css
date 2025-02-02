@@ -411,6 +411,63 @@ footer {
     border-radius: 15px;
 }
 
+/*------------------------- animation---------------------- */
+
+@keyframes appearx{
+    from{
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.stat-item {
+    animation: appearx linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+
+
+@keyframes appeary{
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.service-item , .project-item {
+    animation: appeary linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+@keyframes appear3d{
+    from{
+        opacity: 0;
+        transform: translate(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+.skill-item {
+    animation: appear3d linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+/* ----------------------------------------------------------- */
 
 
 /* Responsive Design */
